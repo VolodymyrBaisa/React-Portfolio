@@ -203,8 +203,11 @@
         }
 
         .facebook,
-        .linkedin {
+        .linkedin,
+        .svg-email,
+        .svg-git {
             color: $primary-font-color;
+            fill: $primary-font-color;
             font-size: 2vw;
         }
 
