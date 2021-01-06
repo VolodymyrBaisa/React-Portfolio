@@ -139,8 +139,8 @@
 //Hero Container
 .hero-container {
     @include flex(center, center, column);
-    margin-top: 3.7vw;
-    height: calc(100vh - 3.7vw);
+    padding-top: 3.7vw;
+    height: 100vh;
     width: 100%;
     background-image: linear-gradient(
             90deg,
