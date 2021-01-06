@@ -10,16 +10,16 @@ export default class Hero extends Component {
                 <section id="hero">
                     <Header />
                     {/* Hero Container */}
-                    <div class="hero-container">
-                        <div class="hero-header">
+                    <div className="hero-container">
+                        <div className="hero-header">
                             Designer, Front-end Developer
                         </div>
-                        <div class="hero-text">
+                        <div className="hero-text">
                             I design and code beautifully simple things, and I
                             love what I do.
                         </div>
-                        <div class="hero-image"></div>
-                        <div class="separator"></div>
+                        <div className="hero-image"></div>
+                        <div className="separator"></div>
                         <SocialMediaButtons />
                     </div>
                 </section>

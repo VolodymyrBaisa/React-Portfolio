@@ -3,9 +3,9 @@ import React, { Component } from "react";
 export default class SkillsDescription extends Component {
     render() {
         return (
-            <div class="skills">
-                <div class="title">Skills</div>
-                <div class="description">
+            <div className="skills">
+                <div className="title">Skills</div>
+                <div className="description">
                     • JavaScript development: refactoring, improving the
                     structure, reliability, build setup.
                     <br />

@@ -1,13 +1,35 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 
 export default class ContactForm extends Component {
+    constructor() {
+        super();
+        this.nameRef = createRef();
+        this.emailRef = createRef();
+        this.messageRef = createRef();
+    }
+
+    onSubmitClick = () => {
+        if (this.nameRef && this.emailRef && this.messageRef) {
+            window.open(
+                `mailto:biosvova@gmail.com?body=name:${this.nameRef.current.value}%0D%0Aemail:${this.emailRef.current.value}%0D%0A${this.messageRef.current.value}`
+            );
+        }
+    };
+
     render() {
         return (
-            <div class="message">
-                <div class="row">
-                    <input id="name" placeholder="Name" type="text" required />
+            <div className="message">
+                <div className="row">
+                    <input
+                        ref={this.nameRef}
+                        id="name"
+                        placeholder="Name"
+                        type="text"
+                        required
+                    />
 
                     <input
+                        ref={this.emailRef}
                         id="email"
                         placeholder="Email"
                         type="email"
@@ -16,16 +38,21 @@ export default class ContactForm extends Component {
                 </div>
 
                 <textarea
+                    ref={this.messageRef}
                     id="message"
                     placeholder="Message"
                     required
                 ></textarea>
 
-                <div id="submit" class="button">
-                    <span class="name">Submit</span>
-                    <span class="arrow">
+                <div
+                    onClick={this.onSubmitClick}
+                    id="submit"
+                    className="button"
+                >
+                    <span className="name">Submit</span>
+                    <span className="arrow">
                         <svg
-                            class="button-arrow"
+                            className="button-arrow"
                             preserveAspectRatio="none"
                             viewBox="0 0 24 24"
                             fill="none"

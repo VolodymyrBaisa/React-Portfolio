@@ -36,20 +36,16 @@
     @include flex(space-between, flex-start, row);
     flex-wrap: wrap;
     height: 100%;
-    .item-container-1,
-    .item-container-2,
-    .item-container-3,
-    .item-container-4,
-    .item-container-5,
-    .item-container-6,
-    .item-container-7,
-    .item-container-8 {
+    .item-container {
         position: relative;
         width: 22vw;
         height: 13vw;
         border-radius: 1rem;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
         margin: 1% 0;
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
         @include flex(center, center, column);
         cursor: pointer;
         transition: all 1.2s ease-in-out;
@@ -122,36 +118,4 @@
             filter: grayscale(100%);
         }
     }
-}
-.item-container-1 {
-    background: url(../img/weather-app.png) center center no-repeat;
-    background-size: 100% 100%;
-}
-.item-container-2 {
-    background: url(../img/work-scheduler.png) center center no-repeat;
-    background-size: 100% 100%;
-}
-.item-container-3 {
-    background: url(../img/quiz-app.png) center center no-repeat;
-    background-size: 100% 100%;
-}
-.item-container-4 {
-    background: url(../img/password-generator.png) center center no-repeat;
-    background-size: 100% 100%;
-}
-.item-container-5 {
-    background: url(../img/comic-base.png) center center no-repeat;
-    background-size: 100% 100%;
-}
-.item-container-6 {
-    background: url(../img/project2.png) center center no-repeat;
-    background-size: 100% 100%;
-}
-.item-container-7 {
-    background: url(../img/note_taker.png) center center no-repeat;
-    background-size: 100% 100%;
-}
-.item-container-8 {
-    background: url(../img/eat_de_burger.png) center center no-repeat;
-    background-size: 100% 100%;
 }

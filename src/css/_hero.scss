@@ -28,6 +28,7 @@
 
 .logo-svg {
     width: 55%;
+    cursor: pointer;
 }
 
 .menu-container {
@@ -49,6 +50,7 @@
                 color: $primary-font-color;
                 margin-top: 1%;
                 margin-left: 3vw;
+                cursor: pointer;
                 &::before {
                     content: "";
                     position: absolute;

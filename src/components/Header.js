@@ -1,22 +1,57 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
+import { Link } from "react-scroll";
 
 export default class Header extends Component {
+    constructor() {
+        super();
+        this.navMenuSvgRef = createRef();
+        this.navBurgerMenuRef = createRef();
+        this.menuListRef = createRef();
+        this.isBurgerActive = false;
+    }
+
+    onClickBurgerMenu = () => {
+        if (this.navMenuSvgRef) {
+            const navMenuSvgNode = this.navMenuSvgRef.current;
+            const menuListNode = this.menuListRef.current;
+            const menuList = menuListNode.querySelectorAll("li");
+            if ((this.isBurgerActive = !this.isBurgerActive)) {
+                navMenuSvgNode.animate([{ width: 20 + "vw" }], {
+                    duration: 300,
+                    iterations: 1,
+                    fill: "forwards",
+                });
+
+                setTimeout(function () {
+                    menuList.forEach((item) => item.classList.add("active"));
+                }, 300);
+            } else {
+                navMenuSvgNode.animate([{ width: 0 + "vw" }], {
+                    duration: 300,
+                    iterations: 1,
+                    fill: "forwards",
+                });
+                menuList.forEach((item) => item.classList.remove("active"));
+            }
+        }
+    };
+
     render() {
         return (
             <>
                 {/*Navigation*/}
-                <nav class="nav-header">
+                <nav className="nav-header">
                     {/* prettier-ignore */}
-                    <svg class="nav-header-svg" preserveAspectRatio="none" viewBox="0 0 1440 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="nav-header-svg" preserveAspectRatio="none" viewBox="0 0 1440 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M275.5 0L241 55H1440V0H275.5Z" fill="#4A5665"/>
                     <path d="M274.5 0H-1V55H239.5L274.5 0Z" fill="#1D2C3E"/>
                     </svg>
 
-                    <div class="logo-container">
-                        <div class="logo">
-                            <a href="#hero">
+                    <div className="logo-container">
+                        <div className="logo">
+                            <Link to="hero" smooth={true} duration={800}>
                                 {/* prettier-ignore */}
-                                <svg class="logo-svg" preserveAspectRatio="none" viewBox="0 0 231 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg className="logo-svg" preserveAspectRatio="none" viewBox="0 0 231 70" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M231 0H0V70H231V0Z" fill="#1D2C3E"/>
                                 <path d="M221.5 9.5H171.5V61.5H221.5V9.5Z" stroke="#F4F4F4"/>
                                 <path d="M201.78 59.054C201.156 59.054 200.589 58.916 200.079 58.64C199.575 58.358 199.179 57.974 198.891 57.488C198.609 57.002 198.468 56.456 198.468 55.85C198.468 55.244 198.609 54.698 198.891 54.212C199.179 53.726 199.575 53.345 200.079 53.069C200.589 52.787 201.156 52.646 201.78 52.646C202.404 52.646 202.965 52.784 203.463 53.06C203.967 53.336 204.363 53.72 204.651 54.212C204.939 54.698 205.083 55.244 205.083 55.85C205.083 56.456 204.939 57.005 204.651 57.497C204.363 57.983 203.967 58.364 203.463 58.64C202.965 58.916 202.404 59.054 201.78 59.054ZM201.78 58.46C202.278 58.46 202.728 58.349 203.13 58.127C203.532 57.899 203.847 57.587 204.075 57.191C204.303 56.789 204.417 56.342 204.417 55.85C204.417 55.358 204.303 54.914 204.075 54.518C203.847 54.116 203.532 53.804 203.13 53.582C202.728 53.354 202.278 53.24 201.78 53.24C201.282 53.24 200.829 53.354 200.421 53.582C200.019 53.804 199.701 54.116 199.467 54.518C199.239 54.914 199.125 55.358 199.125 55.85C199.125 56.342 199.239 56.789 199.467 57.191C199.701 57.587 200.019 57.899 200.421 58.127C200.829 58.349 201.282 58.46 201.78 58.46ZM206.576 52.7H209.141C209.807 52.7 210.395 52.835 210.905 53.105C211.415 53.369 211.811 53.741 212.093 54.221C212.375 54.695 212.516 55.238 212.516 55.85C212.516 56.462 212.375 57.008 212.093 57.488C211.811 57.962 211.415 58.334 210.905 58.604C210.395 58.868 209.807 59 209.141 59H206.576V52.7ZM209.105 58.424C209.657 58.424 210.14 58.316 210.554 58.1C210.968 57.878 211.289 57.575 211.517 57.191C211.745 56.801 211.859 56.354 211.859 55.85C211.859 55.346 211.745 54.902 211.517 54.518C211.289 54.128 210.968 53.825 210.554 53.609C210.14 53.387 209.657 53.276 209.105 53.276H207.242V58.424H209.105ZM218.466 58.424V59H214.011V52.7H218.331V53.276H214.677V55.517H217.935V56.084H214.677V58.424H218.466Z" fill="#F4F4F4"/>
@@ -33,20 +68,38 @@ export default class Header extends Component {
                                 <path d="M34.164 30.8V56H31.536V44.372H15.768V56H13.104V30.8H15.768V42.032H31.536V30.8H34.164ZM40.5352 50.276H38.3212V49.7H43.4152V50.276H41.2012V56H40.5352V50.276ZM51.0221 49.7V56H50.3831V50.96L47.9081 55.199H47.5931L45.1181 50.987V56H44.4791V49.7H45.0281L47.7641 54.371L50.4731 49.7H51.0221ZM53.0748 49.7H53.7408V55.424H57.2688V56H53.0748V49.7Z" fill="#F4F4F4"/>
                                 <path d="M14.97 13.234C15.9893 13.234 16.7703 13.5713 17.313 14.246C17.8557 14.9133 18.127 15.8593 18.127 17.084C18.127 17.942 17.9803 18.668 17.687 19.262C17.3937 19.856 16.983 20.307 16.455 20.615C15.927 20.9157 15.311 21.066 14.607 21.066C13.8443 21.066 13.2357 20.9267 12.781 20.648L13.1 20.01C13.4667 20.252 13.9653 20.373 14.596 20.373C15.4467 20.373 16.114 20.1053 16.598 19.57C17.082 19.0273 17.324 18.2427 17.324 17.216C17.324 17.0253 17.313 16.8163 17.291 16.589C17.1003 17.007 16.796 17.3333 16.378 17.568C15.96 17.7953 15.4797 17.909 14.937 17.909C14.431 17.909 13.98 17.8137 13.584 17.623C13.1953 17.4323 12.891 17.1647 12.671 16.82C12.451 16.468 12.341 16.061 12.341 15.599C12.341 15.1297 12.4547 14.7153 12.682 14.356C12.9093 13.9967 13.221 13.7217 13.617 13.531C14.0203 13.333 14.4713 13.234 14.97 13.234ZM15.058 17.238C15.4467 17.238 15.7877 17.1647 16.081 17.018C16.3817 16.8713 16.6163 16.6697 16.785 16.413C16.9537 16.1563 17.038 15.8703 17.038 15.555C17.038 15.2617 16.9573 14.9903 16.796 14.741C16.642 14.4917 16.411 14.29 16.103 14.136C15.795 13.982 15.4283 13.905 15.003 13.905C14.4457 13.905 13.991 14.059 13.639 14.367C13.2943 14.6677 13.122 15.071 13.122 15.577C13.122 16.083 13.2943 16.4863 13.639 16.787C13.991 17.0877 14.464 17.238 15.058 17.238ZM21.2991 16.457C22.4138 16.457 23.2241 16.6587 23.7301 17.062C24.2435 17.458 24.5001 18.0153 24.5001 18.734C24.5001 19.1813 24.3938 19.581 24.1811 19.933C23.9758 20.285 23.6641 20.5637 23.2461 20.769C22.8281 20.967 22.3148 21.066 21.7061 21.066C21.1561 21.066 20.6318 20.978 20.1331 20.802C19.6418 20.6187 19.2458 20.3767 18.9451 20.076L19.3301 19.449C19.5868 19.713 19.9241 19.9293 20.3421 20.098C20.7601 20.2593 21.2111 20.34 21.6951 20.34C22.3331 20.34 22.8245 20.197 23.1691 19.911C23.5211 19.625 23.6971 19.2437 23.6971 18.767C23.6971 18.239 23.4991 17.8393 23.1031 17.568C22.7145 17.2967 22.0545 17.161 21.1231 17.161H19.4841L19.8801 13.3H24.0931V14.004H20.5731L20.3091 16.457H21.2991Z" fill="#F4F4F4"/>
                                 </svg>
-                            </a>
+                            </Link>
                         </div>
                     </div>
-                    <div class="menu-container">
-                        <div class="menu">
+                    <div className="menu-container">
+                        <div className="menu">
                             <ul>
                                 <li>
-                                    <a href="#about">About</a>
+                                    <Link
+                                        to="about"
+                                        smooth={true}
+                                        duration={800}
+                                    >
+                                        About
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="#portfolio">Portfolio</a>
+                                    <Link
+                                        to="portfolio"
+                                        smooth={true}
+                                        duration={800}
+                                    >
+                                        Portfolio
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="#contact">Contact</a>
+                                    <Link
+                                        to="contact"
+                                        smooth={true}
+                                        duration={800}
+                                    >
+                                        Contact
+                                    </Link>
                                 </li>
                                 <li>
                                     <a href="https://drive.google.com/file/d/1FIETx-8Thcwaj3yRtvzFxs9IJTxNTJqp/view?usp=sharing">
@@ -54,29 +107,39 @@ export default class Header extends Component {
                                     </a>
                                 </li>
                             </ul>
-                            <div id="menuBurger" class="menu-burger">
+                            <div
+                                onClick={this.onClickBurgerMenu}
+                                id="menuBurger"
+                                className="menu-burger"
+                            >
                                 {/* prettier-ignore*/}
-                                <svg class="menu-burger-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg className="menu-burger-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4 24H28V21.3333H4V24ZM4 17.3333H28V14.6667H4V17.3333ZM4 8V10.6667H28V8H4Z"/>
                             </svg>
                             </div>
                         </div>
                     </div>
                 </nav>
-                <nav id="navBurgerMenu" class="nav-header-burger">
+                <nav id="navBurgerMenu" className="nav-header-burger">
                     {/* prettier-ignore */}
-                    <svg class="nav-menu-svg" preserveAspectRatio="none" viewBox="0 0 669 557" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg ref={this.navMenuSvgRef} style={{width: "0vw"}} className="nav-menu-svg" preserveAspectRatio="none" viewBox="0 0 669 557" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M669 0H0C0.620058 472.309 191.391 551.11 669 557.5V0Z"/>
                 </svg>
-                    <ul>
+                    <ul ref={this.menuListRef}>
                         <li>
-                            <a href="#about">About</a>
+                            <Link to="about" smooth={true} duration={800}>
+                                About
+                            </Link>
                         </li>
                         <li>
-                            <a href="#portfolio">Portfolio</a>
+                            <Link to="portfolio" smooth={true} duration={800}>
+                                Portfolio
+                            </Link>
                         </li>
                         <li>
-                            <a href="#contact">Contact</a>
+                            <Link to="contact" smooth={true} duration={800}>
+                                Contact
+                            </Link>
                         </li>
                         <li>
                             <a href="https://drive.google.com/file/d/1FIETx-8Thcwaj3yRtvzFxs9IJTxNTJqp/view?usp=sharing">

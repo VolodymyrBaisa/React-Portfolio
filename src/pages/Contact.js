@@ -6,9 +6,9 @@ export default class Contact extends Component {
     render() {
         return (
             <section id="contact">
-                <div class="background-cover"></div>
-                <div class="contact-container">
-                    <div class="title">
+                <div className="background-cover"></div>
+                <div className="contact-container">
+                    <div className="title">
                         Thanks for taking the time to reach out.
                         <br />
                         How can I help you today?

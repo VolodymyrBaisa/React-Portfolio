@@ -47,11 +47,7 @@
 
     .portfolio-container {
         @include flex(space-between, flex-start, row);
-        .item-container-1,
-        .item-container-2,
-        .item-container-3,
-        .item-container-4,
-        .item-container-5 {
+        .item-container {
             width: calc(22vw * 2);
             height: calc(13vw * 2);
         }
