@@ -1,0 +1,23 @@
+$primary-font-color: #f4f4f4;
+$secondary-font-color: #1d2c3e;
+
+$primary-color: #1d2c3e;
+$secondary-color: #3d4958;
+$third-color: #f4f4f4;
+
+$left-right-margin: 3%;
+
+@mixin flex($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@import "global";
+@import "hero";
+@import "about";
+@import "portfolio";
+@import "contact";
+@import "tablet";
+@import "phone";
