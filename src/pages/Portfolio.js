@@ -8,6 +8,7 @@ import ComicBaseImg from "../img/comic-base.png";
 import Project2Img from "../img/../img/project2.png";
 import NoteTakerImg from "../img/note_taker.png";
 import EatDeBurgerImg from "../img/eat_de_burger.png";
+import DBCSystemImg from "../img/dbc_system.png";
 
 export default class Portfolio extends Component {
     render() {
@@ -44,12 +45,20 @@ export default class Portfolio extends Component {
                     {/* Weather App */}
                     <PortfolioItem
                         title={"Weather App"}
+                        gbLink={
+                            "https://github.com/VolodymyrBaisa/HW-WeatherApp"
+                        }
+                        builtWith={"HTML, SASS, JavaScript, jQuery, Leaflet.js"}
                         link={"https://volodymyrbaisa.github.io/HW-WeatherApp/"}
                         backgroundImage={WeatherAppImg}
                     />
                     {/* Work Scheduler */}
                     <PortfolioItem
                         title={"Work Scheduler"}
+                        gbLink={
+                            "https://github.com/VolodymyrBaisa/HW-Work-Scheduler"
+                        }
+                        builtWith={"HTML, SASS, JavaScript, jQuery, Moment.js"}
                         link={
                             "https://volodymyrbaisa.github.io/HW-Work-Scheduler/"
                         }
@@ -58,12 +67,18 @@ export default class Portfolio extends Component {
                     {/* Quiz App */}
                     <PortfolioItem
                         title={"Quiz App"}
+                        gbLink={"https://github.com/VolodymyrBaisa/HW-Quiz-App"}
+                        builtWith={"HTML, CSS, JavaScript"}
                         link={"https://volodymyrbaisa.github.io/HW-Quiz-App/"}
                         backgroundImage={QuizAppImg}
                     />
                     {/* Password Generator */}
                     <PortfolioItem
                         title={"Password Generator"}
+                        gbLink={
+                            "https://github.com/VolodymyrBaisa/HW-PasswordGenerator"
+                        }
+                        builtWith={"HTML, CSS, JavaScript"}
                         link={
                             "https://volodymyrbaisa.github.io/HW-PasswordGenerator/"
                         }
@@ -72,6 +87,10 @@ export default class Portfolio extends Component {
                     {/* Comic Base */}
                     <PortfolioItem
                         title={"Comic Base"}
+                        gbLink={
+                            "https://github.com/VolodymyrBaisa/Project1-Comics-Reader"
+                        }
+                        builtWith={"HTML, SASS, JavaScript, jQuery"}
                         link={
                             "https://volodymyrbaisa.github.io/Project1-Comics-Reader/"
                         }
@@ -80,20 +99,46 @@ export default class Portfolio extends Component {
                     {/* How To? */}
                     <PortfolioItem
                         title={"How To?"}
+                        gbLink={"https://github.com/VolodymyrBaisa/Project-2"}
+                        builtWith={
+                            "HTML, SASS, JavaScript, jQuery, Sequelize, Handlebars"
+                        }
                         link={"https://app-project2.herokuapp.com/posts/"}
                         backgroundImage={Project2Img}
                     />
                     {/* Note Taker */}
                     <PortfolioItem
                         title={"Note Taker"}
+                        gbLink={"https://github.com/VolodymyrBaisa/NoteTaker"}
+                        builtWith={
+                            "HTML, SASS, JavaScript, jQuery, Node.js, Express"
+                        }
                         link={"https://note-traker.herokuapp.com/"}
                         backgroundImage={NoteTakerImg}
                     />
                     {/* Eat De Burger */}
                     <PortfolioItem
                         title={"Eat De Burger"}
+                        gbLink={
+                            "https://github.com/VolodymyrBaisa/HW-BurgerSolution"
+                        }
+                        builtWith={
+                            "HTML, SASS, JavaScript, jQuery, Node.js, Express, Sequelize, Handlebars"
+                        }
                         link={"https://hw-eat-da-burger-13.herokuapp.com/"}
                         backgroundImage={EatDeBurgerImg}
+                    />
+                    {/* DBC System */}
+                    <PortfolioItem
+                        title={"DBC System"}
+                        gbLink={
+                            "https://github.com/VolodymyrBaisa/Project3-Business-Card-System"
+                        }
+                        builtWith={
+                            "HTML, SASS, JavaScript, React.js, Webpack, Axios, Node.js, Express, MongoDB, Mongoose"
+                        }
+                        link={"https://project3-bcs.herokuapp.com/"}
+                        backgroundImage={DBCSystemImg}
                     />
                 </div>
             </section>
