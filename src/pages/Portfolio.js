@@ -45,42 +45,40 @@ export default class Portfolio extends Component {
                     {/* Weather App */}
                     <PortfolioItem
                         title={"Weather App"}
-                        gbLink={
-                            "https://github.com/VolodymyrBaisa/HW-WeatherApp"
-                        }
+                        gbLink={"https://github.com/VolodymyrBaisa/WeatherApp"}
                         builtWith={"HTML, SASS, JavaScript, jQuery, Leaflet.js"}
-                        link={"https://volodymyrbaisa.github.io/HW-WeatherApp/"}
+                        link={"https://volodymyrbaisa.github.io/WeatherApp/"}
                         backgroundImage={WeatherAppImg}
                     />
                     {/* Work Scheduler */}
                     <PortfolioItem
                         title={"Work Scheduler"}
                         gbLink={
-                            "https://github.com/VolodymyrBaisa/HW-Work-Scheduler"
+                            "https://github.com/VolodymyrBaisa/Work-Scheduler"
                         }
                         builtWith={"HTML, SASS, JavaScript, jQuery, Moment.js"}
                         link={
-                            "https://volodymyrbaisa.github.io/HW-Work-Scheduler/"
+                            "https://volodymyrbaisa.github.io/Work-Scheduler/"
                         }
                         backgroundImage={WorkSchedulerImg}
                     />
                     {/* Quiz App */}
                     <PortfolioItem
                         title={"Quiz App"}
-                        gbLink={"https://github.com/VolodymyrBaisa/HW-Quiz-App"}
+                        gbLink={"https://github.com/VolodymyrBaisa/Quiz-App"}
                         builtWith={"HTML, CSS, JavaScript"}
-                        link={"https://volodymyrbaisa.github.io/HW-Quiz-App/"}
+                        link={"https://volodymyrbaisa.github.io/Quiz-App/"}
                         backgroundImage={QuizAppImg}
                     />
                     {/* Password Generator */}
                     <PortfolioItem
                         title={"Password Generator"}
                         gbLink={
-                            "https://github.com/VolodymyrBaisa/HW-PasswordGenerator"
+                            "https://github.com/VolodymyrBaisa/PasswordGenerator"
                         }
                         builtWith={"HTML, CSS, JavaScript"}
                         link={
-                            "https://volodymyrbaisa.github.io/HW-PasswordGenerator/"
+                            "https://volodymyrbaisa.github.io/PasswordGenerator/"
                         }
                         backgroundImage={PasswordGeneratorImg}
                     />
@@ -88,18 +86,16 @@ export default class Portfolio extends Component {
                     <PortfolioItem
                         title={"Comic Base"}
                         gbLink={
-                            "https://github.com/VolodymyrBaisa/Project1-Comics-Reader"
+                            "https://github.com/VolodymyrBaisa/Comics-Reader"
                         }
                         builtWith={"HTML, SASS, JavaScript, jQuery"}
-                        link={
-                            "https://volodymyrbaisa.github.io/Project1-Comics-Reader/"
-                        }
+                        link={"https://volodymyrbaisa.github.io/Comics-Reader/"}
                         backgroundImage={ComicBaseImg}
                     />
                     {/* How To? */}
                     <PortfolioItem
                         title={"How To?"}
-                        gbLink={"https://github.com/VolodymyrBaisa/Project-2"}
+                        gbLink={"https://github.com/VolodymyrBaisa/How-To"}
                         builtWith={
                             "HTML, SASS, JavaScript, jQuery, Sequelize, Handlebars"
                         }
@@ -120,7 +116,7 @@ export default class Portfolio extends Component {
                     <PortfolioItem
                         title={"Eat De Burger"}
                         gbLink={
-                            "https://github.com/VolodymyrBaisa/HW-BurgerSolution"
+                            "https://github.com/VolodymyrBaisa/BurgerSolution"
                         }
                         builtWith={
                             "HTML, SASS, JavaScript, jQuery, Node.js, Express, Sequelize, Handlebars"
@@ -132,7 +128,7 @@ export default class Portfolio extends Component {
                     <PortfolioItem
                         title={"DBC System"}
                         gbLink={
-                            "https://github.com/VolodymyrBaisa/Project3-Business-Card-System"
+                            "https://github.com/VolodymyrBaisa/Business-Card-System"
                         }
                         builtWith={
                             "HTML, SASS, JavaScript, React.js, Webpack, Axios, Node.js, Express, MongoDB, Mongoose"

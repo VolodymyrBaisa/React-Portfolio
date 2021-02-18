@@ -12,7 +12,7 @@ export default class Hero extends Component {
                     {/* Hero Container */}
                     <div className="hero-container">
                         <div className="hero-header">
-                            Designer, Front-end Developer
+                            Designer, Full-Stack Web Developer
                         </div>
                         <div className="hero-text">
                             I design and code beautifully simple things, and I
