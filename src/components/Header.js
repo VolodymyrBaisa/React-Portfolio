@@ -102,7 +102,7 @@ export default class Header extends Component {
                                     </Link>
                                 </li>
                                 <li>
-                                    <a href="https://drive.google.com/file/d/1FIETx-8Thcwaj3yRtvzFxs9IJTxNTJqp/view?usp=sharing">
+                                    <a href="https://drive.google.com/file/d/1alPSov6amTYUnL26UV0eJYVzKX1yihgH/view?usp=sharing">
                                         Resume
                                     </a>
                                 </li>
